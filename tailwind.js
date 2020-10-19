@@ -5,8 +5,11 @@ module.exports = {
   },
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {}, // Setup color schemes here
+    },
   },
   variants: {},
   plugins: [],
-}
+  prefix: "", //You can add a prefix if you want to
+};
