@@ -7,6 +7,20 @@
     />
     <router-view />
     <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="inline-flex">
+      <button
+        @click.prevent="errorAlert"
+        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Show Error
+      </button>
+      <button
+        @click.prevent="successAlert"
+        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Show Success
+      </button>
+    </div>
   </div>
 </template>
 
@@ -30,6 +44,20 @@ export default {
       this.notify.type = data.type;
       this.notify.message = data.message;
     });
+  },
+  methods: {
+    errorAlert() {
+      this.$Bus.$emit("notify", {
+        type: "error",
+        message: "This is an error message",
+      });
+    },
+    successAlert() {
+      this.$Bus.$emit("notify", {
+        type: "success",
+        message: "This is a success message",
+      });
+    },
   },
 };
 </script>
