@@ -1,6 +1,8 @@
 // import Api from "@/utils/Api";
 
-const state = {};
+const state = {
+  token: "",
+};
 const getters = {};
 const mutations = {};
 const actions = {};
